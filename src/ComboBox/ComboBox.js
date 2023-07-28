@@ -13,6 +13,7 @@ const ComboBox = (props) => {
   return (
     <div className="combo-box">
       <Combobox by="id" onChange={_onChange} value={selectedOptions}>
+        <Combobox.Input />
         <Combobox.Button as={Fragment}>
           {() => (
             <button className="combo-box__button" type="button">
