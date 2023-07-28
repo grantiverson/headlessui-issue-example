@@ -26,8 +26,11 @@ describe(`<ComboBox onChange={() => {}} options={[...]} value="..." />`, () => {
     render(<TestComboBox value="1" />);
 
     // open the dropdown
-    await user.click(screen.getByRole("button"));
-    await user.hover(screen.getAllByRole("option")[3]);
+    await user.click(screen.getByRole("combobox"));
+    await user.keyboard("[ArrowDown]");
+    await user.keyboard("[ArrowDown]");
+    await user.keyboard("[ArrowDown]");
+    await user.keyboard("[ArrowDown]");
 
     // the active option should have the active class
     expect(screen.getAllByRole("option")[3]).toHaveClass(
